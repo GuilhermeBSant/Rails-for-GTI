@@ -1,0 +1,2 @@
+class Bibliotecario < ApplicationRecord
+end

@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Bibliotecarios</h1>
+
+<div id="bibliotecarios">
+  <% @bibliotecarios.each do |bibliotecario| %>
+    <%= render bibliotecario %>
+    <p>
+      <%= link_to "Show this bibliotecario", bibliotecario %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New bibliotecario", new_bibliotecario_path %>
