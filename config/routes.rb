@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
+  resources :reservas
   devise_for :users
   get 'home/index'
   root 'home#index'
-  resources :reservas
   resources :livros
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

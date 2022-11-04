@@ -12,8 +12,8 @@
   <% end %>
 
   <div>
-    <%= form.label :bibliotecario_id, style: "display: block" %>
-    <%= collection_select(:reserva, :bibliotecario_id, @optionsForBibli, :id, :nome)%>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= collection_select(:reserva, :user_id, @optionsForUser, :id, :nome)%>
   </div>
 
   <div>
@@ -23,7 +23,7 @@
 
   <div>
     <%= form.label :livro_id, style: "display: block" %>
-    <%= collection_select(:reserva, :livro_id, @optionsForBooks, :id, :nomelivro)%>
+    <%= collection_select(:reserva, :livro_id, Livro.all, :id, :nomelivro)%>
   </div>
 
   <div>

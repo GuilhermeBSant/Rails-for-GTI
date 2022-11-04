@@ -8,19 +8,21 @@ class ReservasController < ApplicationController
 
   # GET /reservas/1 or /reservas/1.json
   def show
-    optionsForSelect
+    @optionsForBooks = Livro.all
+    @optionsForUser = User.all  
   end
 
   # GET /reservas/new
   def new
     @reserva = Reserva.new
-    optionsForSelect
-    
+    @optionsForBooks = Livro.all
+    @optionsForUser = User.all  
   end
 
   # GET /reservas/1/edit
   def edit
-    optionsForSelect
+    @optionsForBooks = Livro.all
+    @optionsForUser = User.all  
   end
 
   # POST /reservas or /reservas.json
@@ -62,18 +64,15 @@ class ReservasController < ApplicationController
   end
 
   private
-  def optionsForSelect
-    @optionsForBibli = User.all
-    @optionsForBooks = Livro.all
-  end
 
     # Use callbacks to share common setup or constraints between actions.
     def set_reserva
       @reserva = Reserva.find(params[:id])
+      puts Reserva.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def reserva_params
-      params.require(:reserva).permit(:bibliotecario_id, :nomeusuario, :livro_id)
+      params.require(:reserva).permit(:user_id, :nomeusuario, :livro_id)
     end
 end

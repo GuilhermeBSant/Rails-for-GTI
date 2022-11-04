@@ -3,6 +3,12 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.2"
 
+gem "faker"
+#for poputale db
+
+gem 'bootstrap', '~> 4.3.1'
+# For styles
+
 gem "devise"
 # For sing in/sing up system
 
@@ -76,3 +82,5 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "ransack", "~> 3.2"

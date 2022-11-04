@@ -1,4 +1,4 @@
 class Reserva < ApplicationRecord
-  belongs_to :bibliotecario
+  belongs_to :user
   belongs_to :livro
 end

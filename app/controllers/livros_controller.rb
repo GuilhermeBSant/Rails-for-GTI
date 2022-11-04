@@ -1,9 +1,11 @@
 class LivrosController < ApplicationController
   before_action :set_livro, only: %i[ show edit update destroy ]
+  
 
   # GET /livros or /livros.json
   def index
-    @livros = Livro.all
+    @q = Livro.ransack(params[:q])
+    @livros = @q.result
   end
 
   # GET /livros/1 or /livros/1.json

@@ -14,9 +14,9 @@ class ReservasTest < ApplicationSystemTestCase
     visit reservas_url
     click_on "New reserva"
 
-    fill_in "Bibliotecario", with: @reserva.bibliotecario_id
     fill_in "Livro", with: @reserva.livro_id
     fill_in "Nomeusuario", with: @reserva.nomeusuario
+    fill_in "User", with: @reserva.user_id
     click_on "Create Reserva"
 
     assert_text "Reserva was successfully created"
@@ -27,9 +27,9 @@ class ReservasTest < ApplicationSystemTestCase
     visit reserva_url(@reserva)
     click_on "Edit this reserva", match: :first
 
-    fill_in "Bibliotecario", with: @reserva.bibliotecario_id
     fill_in "Livro", with: @reserva.livro_id
     fill_in "Nomeusuario", with: @reserva.nomeusuario
+    fill_in "User", with: @reserva.user_id
     click_on "Update Reserva"
 
     assert_text "Reserva was successfully updated"

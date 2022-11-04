@@ -2,12 +2,18 @@
 
 <h1>Livros</h1>
 
+<%= search_form_for @q do |f| %>
+<%= f.label :nomelivro %>
+<%= f.text_field :nomelivro_cont, class: 'form-control' %>
+<%= f.submit class: 'btn btn-primary' %>
+<%= link_to "Clear", request.path, class: "btn btn-default" %>
+<% end %>
+
 <div id="livros">
   <% @livros.each do |livro| %>
     <%= render livro %>
     <p>
-      <%= link_to "Show this livro", livro %>
-      
+      <%= link_to "Show this livro", livro %>  
     </p>
     
   <% end %>

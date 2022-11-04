@@ -17,7 +17,7 @@ class ReservasControllerTest < ActionDispatch::IntegrationTest
 
   test "should create reserva" do
     assert_difference("Reserva.count") do
-      post reservas_url, params: { reserva: { bibliotecario_id: @reserva.bibliotecario_id, livro_id: @reserva.livro_id, nomeusuario: @reserva.nomeusuario } }
+      post reservas_url, params: { reserva: { livro_id: @reserva.livro_id, nomeusuario: @reserva.nomeusuario, user_id: @reserva.user_id } }
     end
 
     assert_redirected_to reserva_url(Reserva.last)
@@ -34,7 +34,7 @@ class ReservasControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update reserva" do
-    patch reserva_url(@reserva), params: { reserva: { bibliotecario_id: @reserva.bibliotecario_id, livro_id: @reserva.livro_id, nomeusuario: @reserva.nomeusuario } }
+    patch reserva_url(@reserva), params: { reserva: { livro_id: @reserva.livro_id, nomeusuario: @reserva.nomeusuario, user_id: @reserva.user_id } }
     assert_redirected_to reserva_url(@reserva)
   end
 
