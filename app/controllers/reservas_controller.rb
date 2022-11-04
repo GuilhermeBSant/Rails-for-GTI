@@ -63,7 +63,7 @@ class ReservasController < ApplicationController
 
   private
   def optionsForSelect
-    @optionsForBibli = Bibliotecario.all
+    @optionsForBibli = User.all
     @optionsForBooks = Livro.all
   end
 

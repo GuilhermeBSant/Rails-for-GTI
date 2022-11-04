@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.2"
 
+gem "devise"
+# For sing in/sing up system
+
 gem "tzinfo-data"
 # Requirement for ruby server start
 
